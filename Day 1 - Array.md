@@ -29,7 +29,7 @@ This approach uses **left-closed-right-closed interval**, which allows the targe
 1. Allow while loop condition as `left <= right` becase it needs to be exausted when `left = right`
 2. When updating right between loops with if condition `target < nums[mid]`, right can be `mid - 1` as the current target can't be equal to right
 
-The key to set up the sliding window is to keep a consistent definition of the window and consider edge cases, which is the [**Loop Invariant Condition**](https://gist.github.com/asabaylus/3071099#anchors-in-markdown). 
+The key to set up the sliding window is to keep a consistent definition of the window and consider edge cases, which is the [**Loop Invariant Condition**](#head1234). 
 
 
 
@@ -68,7 +68,7 @@ Time complexity: O(n); space complexity: O(1).
 
 
 
-### [Loop invariant](https://gist.github.com/asabaylus/3071099#anchors-in-markdown)
+### <a name="head1234"></a>[Loop invariant]
 A loop invariant is a condition [among program variables] that is necessarily true immediately before and immediately after each iteration of a loop. (Note that this says nothing about its truth or falsity part way through an iteration.)
 A loop invariant is some predicate (condition) that holds for every iteration of the loop.
 
