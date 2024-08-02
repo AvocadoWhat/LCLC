@@ -1,7 +1,7 @@
 # Day 1 Array
 
 ## 1. Binary Search
-204. Binary search $\color{green}{\textsf{EASY}}$
+704. Binary search $\color{green}{\textsf{EASY}}$
 
 > Given an array of integers `nums` which is sorted in ascending order, and an integer `target`, write a function to search `target` in `nums`. If `target` exists, then return its index. Otherwise, return `-1`.
 You must write an algorithm with `O(log n)` runtime complexity.
@@ -63,13 +63,25 @@ class Solution(object):
 
 Time complexity: O(n); space complexity: O(1). 
 
+This approach uses slow-fast-pointers (two pointers), in which the `while` loop condition states `fast <= n-1 and 
+slow <= fast`. Because as long as `slow` is not faster than `fast`, and fast doesn't exceed n, the loop should go on. 
+Pointers update logics:
+1. the slow pointer update logic is when there isn't a match between the fast pointer and val
+2. the fast pointer update logic is when there is a match between the fast pointer and val
+3. because when the fast is ahead of slow, an array update is needed: value at slow should be the non-val value in 
+   history that the fast pointer visited
+4. the value update should happen before slow pointer update
+
+
 
 
 
 
 
 ### <a name="head_loop_invariant"></a>Loop invariant
-A loop invariant is a condition [among program variables] that is necessarily true immediately before and immediately after each iteration of a loop. (Note that this says nothing about its truth or falsity part way through an iteration.)
+A loop invariant is a condition [among program variables] that is necessarily true immediately before and 
+immediately after each iteration of a loop. (Note that this says nothing about its truth or falsity part way through 
+an iteration.)
 A loop invariant is some predicate (condition) that holds for every iteration of the loop.
 
 The loop invariant must be true:
@@ -86,4 +98,5 @@ A good loop invariant should satisfy three properties:
 3. Termination: When the loop is terminated the invariant should tell us something useful, something that helps us understand the algorithm.
 
 Loop Invariant Condition: 
-Loop invariant condition is a condition about the relationship between the variables of our program which is definitely true immediately before and immediately after each iteration of the loop. 
+Loop invariant condition is a condition about the relationship between the variables of our program which is definitely
+true immediately before and immediately after each iteration of the loop. 
