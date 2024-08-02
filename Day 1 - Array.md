@@ -113,8 +113,6 @@ to their abs values).
   serves the purpose as the smallest squared value is zero).
 
 
-
-
 ### <a name="head_loop_invariant"></a>Loop invariant
 A loop invariant is a condition [among program variables] that is necessarily true immediately before and 
 immediately after each iteration of a loop. (Note that this says nothing about its truth or falsity part way through 
