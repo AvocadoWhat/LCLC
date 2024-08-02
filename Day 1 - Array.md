@@ -69,7 +69,7 @@ Pointers update logics:
 1. the slow pointer update logic is when there isn't a match between the fast pointer and val
 2. the fast pointer update logic is when there is a match between the fast pointer and val
 3. because when the fast is ahead of slow, an array update is needed: value at slow should be the non-val value in 
-   history that the fast pointer visited
+   history that the fast pointer visited (equivalent to remove the element that equals `val`)
 4. the value update should happen before slow pointer update
 
 
