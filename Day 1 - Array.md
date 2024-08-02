@@ -1,7 +1,7 @@
 # Day 1 Array
 
 ## 1. Binary Search
-704. Binary search $\color{green}{\textsf{EASY}}$
+### 704. Binary search $\color{green}{\textsf{EASY}}$
 
 > Given an array of integers `nums` which is sorted in ascending order, and an integer `target`, write a function to search `target` in `nums`. If `target` exists, then return its index. Otherwise, return `-1`.
 You must write an algorithm with `O(log n)` runtime complexity.
@@ -33,7 +33,7 @@ The key to set up the sliding window is to keep a consistent definition of the w
 
 
 
-27. Remove element $\color{green}{\textsf{EASY}}$
+### 27. Remove element $\color{green}{\textsf{EASY}}$
 
 > Given an integer array `nums` and an integer `val`, remove all occurrences of `val` in `nums` [**in-place**](https://en.wikipedia.org/wiki/In-place_algorithm). The order of the elements may be changed. Then return *the number of elements in* `nums` *which are not equal to* `val`.
 Consider the number of elements in `nums` which are not equal to `val` be `k`, to get accepted, you need to do the following things:
@@ -63,7 +63,7 @@ class Solution(object):
 
 Time complexity: O(n); space complexity: O(1). 
 
-This approach uses slow-fast-pointers (two pointers), in which the `while` loop condition states `fast <= n-1 and 
+This approach uses **slow-fast-pointers (two pointers)**, in which the `while` loop condition states `fast <= n-1 and 
 slow <= fast`. Because as long as `slow` is not faster than `fast`, and fast doesn't exceed n, the loop should go on. 
 Pointers update logics:
 1. the slow pointer update logic is when there isn't a match between the fast pointer and val
@@ -73,7 +73,44 @@ Pointers update logics:
 4. the value update should happen before slow pointer update
 
 
+### 977. Squares of a sorted array
+> Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted 
+> in non-decreasing order.
+>
+> Example 1:
+> Input: nums = [-4,-1,0,3,10]
+Output: [0,1,9,16,100]
+Explanation: After squaring, the array becomes [16,1,0,9,100].
+After sorting, it becomes [0,1,9,16,100].
 
+```commandline
+# 977. Squares of a sorted array
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        i, j = 0, n-1
+
+        res = [0] * n
+        k = n-1
+        while i <= j:
+            if nums[i] ** 2 > nums[j] ** 2:
+                res[k] = nums[i] ** 2
+                i =+ 1
+            else:
+                res[k] = nums[j] ** 2
+                j -= 1
+            k -= 1
+            
+        return res
+```
+Time complexity: O(n); space complexity: O(1). 
+
+**Two pointer** approach -> narrowing window. 
+* The precondition is this is a sorted array, and the square is the largest either of the left most or the right most 
+element. Therefore, the comparing is simplified as only between the left or right most element's square (equivalent 
+to their abs values).
+* Secondly, to construct a container before the loop, we can use `[float('inf')] * n` (in this problem, `[0] * n` also 
+  serves the purpose as the smallest squared value is zero).
 
 
 
