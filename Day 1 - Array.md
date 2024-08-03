@@ -32,7 +32,7 @@ This approach uses **left-closed-right-closed interval**, which allows the targe
 The key to set up the sliding window is to keep a consistent definition of the window and consider edge cases, which is the [**Loop Invariant Condition**](#head_loop_invariant). 
 
 
-
+## 2. Two Pointers
 ### 27. Remove element $\color{green}{\textsf{EASY}}$
 
 > Given an integer array `nums` and an integer `val`, remove all occurrences of `val` in `nums` [**in-place**](https://en.wikipedia.org/wiki/In-place_algorithm). The order of the elements may be changed. Then return *the number of elements in* `nums` *which are not equal to* `val`.
@@ -73,7 +73,7 @@ Pointers update logics:
 4. the value update should happen before slow pointer update
 
 
-### 977. Squares of a sorted array
+### 977. Squares of a sorted array $\color{green}{\textsf{EASY}}$
 > Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted 
 > in non-decreasing order.
 >
